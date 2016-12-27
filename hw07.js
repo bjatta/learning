@@ -1,4 +1,4 @@
-var My_Number;
+var myNumber;
 var bigger=[];
 var less=[];
 
@@ -16,32 +16,32 @@ function makeCounter() {
 
 var counter = makeCounter();
 
-function guess_wat(){
-var user_number=document.f1.my_number.value*1;
-  if (user_number> My_Number) {
-    add_div(' Ваше число '+user_number+' больше!');
-    bigger.push(user_number);
+function guessNumber(){
+var userNumber=document.f1.myNumber.value*1;
+  if (userNumber> myNumber) {
+    addStepToLog(' Ваше число '+userNumber+' больше!');
+    bigger.push(userNumber);
     bigger.sort(sortNumber);
   }
-  if (user_number< My_Number) {
-    add_div(' Ваше число '+user_number+' меньше!');
-    less.push(user_number);
+  if (userNumber< myNumber) {
+    addStepToLog(' Ваше число '+userNumber+' меньше!');
+    less.push(userNumber);
     less.sort(sortNumber);
   }
 
   var counterBorder=document.querySelector('#counterBorder');
   counterBorder.innerHTML=less.join(', ')+'...'+bigger.join(', ');
 
-  if (user_number==My_Number) {
-    add_div(' Угадали ! '+user_number,1);
-    My_Number=getRandomArbitary(0,99);
-    user_number=My_Number;
+  if (userNumber==myNumber) {
+    addStepToLog(' Угадали ! '+userNumber,1);
+    myNumber=getRandomArbitary(0,99);
+    userNumber=myNumber;
     counter = makeCounter();
     bigger=[];less=[];
   }
 }
 
-function add_div(src='',winner=0){
+function addStepToLog(src='',winner=0){
     var div = document.querySelector("div");
     style='';
     if (winner) style=' style="color:red;font:bold"';
@@ -53,4 +53,4 @@ function getRandomArbitary(min, max){
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-if (!My_Number) My_Number=getRandomArbitary(0,99);
+if (!myNumber) myNumber=getRandomArbitary(0,99);
