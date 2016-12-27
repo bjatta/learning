@@ -14,7 +14,7 @@ function makeCounter() {
   };
 }
 
-var counter = makeCounter();
+var counter = new makeCounter();
 
 function guessNumber(){
 var userNumber=document.f1.myNumber.value*1;
@@ -35,7 +35,6 @@ var userNumber=document.f1.myNumber.value*1;
   if (userNumber==myNumber) {
     addStepToLog(' Угадали ! '+userNumber,1);
     myNumber=getRandomArbitary(0,99);
-    userNumber=myNumber;
     counter = makeCounter();
     bigger=[];less=[];
   }
@@ -46,7 +45,10 @@ function addStepToLog(src='',winner=0){
     style='';
     if (winner) style=' style="color:red;font:bold"';
     if (src!='') div.innerHTML+='<p'+style+'>'+counter()+'. '+src+'</p>';
-    else {div.innerHTML='';counterBorder.innerHTML='';}
+    else {
+      div.innerHTML='';
+      counterBorder.innerHTML='';
+    }
 }
 
 function getRandomArbitary(min, max){

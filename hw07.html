@@ -5,7 +5,7 @@
     </head>
     <body>
         <form name='f1' onsubmit="return false;">
-        	Введите число: <input type='text' name='my_number' placeholder=' Угадай число от 0 до 99? '></input>
+        	Введите число: <input type='number' min="0" max="99" name='myNumber' placeholder=' Угадай число от 0 до 99? ' style="width:26ex"></input>
         	<button onclick='guessNumber()'>Ok</button>
         	<button onclick='addStepToLog()'> Clear log?</button>
         </form>
