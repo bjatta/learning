@@ -16,22 +16,17 @@ function searchOnline(ev){
     if (ev.keyCode === 13) addNewNameFromInput();
     cityesList = [].slice.call(document.getElementsByTagName('h5'));
     cityesList.forEach(function (el){
-//      el.innerHTML = el.innerHTML.replace('<span style="color:yellow">','');            // fixed for IE <11
-//      el.innerHTML = el.innerHTML.replace('</span>','');
-      el.innerHTML = el.innerHTML.split('<span style="color: yellow;">').join('');
-      el.innerHTML = el.innerHTML.split('</span>').join('');
+      el.innerHTML = el.innerHTML.replace('<span style="color: yellow;">','');            
+      el.innerHTML = el.innerHTML.replace('</span>','');
       foundPosition = el.textContent.toLowerCase().indexOf(searchablePattern.toLowerCase())+1;
       if (foundPosition && searchablePattern) {
         changeablePattern = el.innerHTML.slice(foundPosition-1,foundPosition-1+searchablePattern.length);
-        hihglightedText ='<span style="color: yellow;">'+changeablePattern+'</span>'
-//        el.parentNode.parentNode.style='background-color:#007ba7;color:#FFF';            // fixed for MS EDGE
+        hihglightedText ='<span style="color: yellow;">'+changeablePattern+'</span>';
         el.parentNode.parentNode.className='btn btn-default active';
-//        el.innerHTML=el.innerHTML.replace(changeablePattern,hihglightedText);            // fixed for IE <11
-          el.innerHTML=el.innerHTML.split(changeablePattern).join(hihglightedText);
+        el.innerHTML=el.innerHTML.replace(changeablePattern,hihglightedText);
         foundTimes();
       }
       else {
-//       el.parentNode.parentNode.style='color:#000';       // fixed for MS EDGE
         el.parentNode.parentNode.className='btn btn-default';
       }
     });
@@ -54,7 +49,7 @@ var myInput = document.getElementById('search');
 
 myInput.addEventListener('keyup',searchOnline);
 
-mainInitial('Афганистан','США','Германия','Россия','Беларусь','Канада','Варшава','Амстердам','Париж','Дамаск','ОАЭ','Казахстан','Замулко','Виктор','Иванович','Дамаск','Преподаватель','Дорошевич','Юрий','Михайлович');
+mainInitial('Афганистан','США','Германия','Россия','Беларусь','Канада','Варшава','Амстердам','Париж','Дамаск','ОАЭ','Казахстан','Замулко','Виктор','Иванович','БелХард','Преподаватель','Дорошевич','Юрий','Михайлович');
 
 function addNewName(textContent){
   var mainDiv = document.querySelector('div.searchable-container');
