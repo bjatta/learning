@@ -1,9 +1,6 @@
 function twelve(ev) {
-  var toLocalStorage = [];
-
-  $('li>input:checked').each(function (){toLocalStorage.push(this.parentNode.innerHTML);});
+  if (ev.target.checked) $(ev.target).attr('checked','checked'); else $(ev.target).removeAttr('checked','checked');
   $('p').text(' total: ' + $('li').length + ' done: ' + $('li>input:checked').length);
-  localStorage.setItem('ToDoList.BelHard',JSON.stringify(toLocalStorage));
   localStorage.setItem('ToDoList.BelHard.allUl',JSON.stringify(document.querySelector('ul').innerHTML));
 }
 
@@ -20,4 +17,4 @@ $('<input>',{
   }).prependTo('body');
 
 $('ul').on('change','li',twelve).html(JSON.parse(localStorage.getItem('ToDoList.BelHard.allUl')));
-
+$('li>input:checkbox').trigger('change');
