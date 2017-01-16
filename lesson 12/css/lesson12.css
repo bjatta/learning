@@ -1,0 +1,52 @@
+$li > input {
+  text-decoration: line-through;
+  color: rgba(0,0,0,.3);
+}
+li < input {
+  text-decoration: line-through;
+  color: rgba(0,0,0,.3);
+}
+input:checked {opacity: .5;}
+li:first-child(input) {
+  text-decoration: line-through;
+  color: rgba(0,0,0,.3);
+}
+*! < input:checked {
+  color: red;
+}
+
+li:nth-child(even) {background: #CCC}
+
+ul {
+  padding-bottom: 1em;
+  padding-right: 3em;
+  list-style-type: none;
+  }
+
+li {
+  border-style: solid;
+  border-width: 3px;
+  border-color: #CCC;
+} 
+
+div.bjattaToDoListMain {
+  width: 22%;
+  border: solid 3px #369;
+  padding: 3px;
+  background: #369;
+  text-align: center;
+}
+
+div {
+  text-align: left;
+}
+
+div.bjattaToDoList {
+  background: white;
+  padding-top: 5px;
+}
+
+div.bjattaToDoList > input:checkbox {
+  border: solid 3px white;
+  padding-left: 1em;
+}
