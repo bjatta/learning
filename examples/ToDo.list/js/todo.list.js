@@ -67,7 +67,7 @@ span();
 $('<input>',{
     type:'text',
     placeholder:' just type U task here...',
-    width: '70%',
+    width: '69%',
     padding: '5px'
   }).prependTo(div)
   .on('keypress',function (ev) { if (13 === ev.keyCode) addTask(ev);})
