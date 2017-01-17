@@ -29,12 +29,8 @@ function toggleInputCheckbox (ev) {
     setTimeout(twelve,animationTime*1.01);
 }
 
-function span () {                             // Just add span (for compacting code only). Add span before all elements in div.
-  $('<span>',{html:'&nbsp'}).prependTo(div);
-}
-
 function addTask(ev){
-  var textForNewItem = $(div+' > input:text').val();
+  var textForNewItem = $('input[name="bjattaToDoListInputTextField"]').val();
   if (textForNewItem.length)
     $('<li>',{text:textForNewItem, class:'roundedTwo bounceInDown animated'})
       .appendTo(div+'>ul')
@@ -44,7 +40,7 @@ function addTask(ev){
     pulseOn(ev.target);
     setTimeout(pulseOff,animationTime,ev.target);
     setTimeout(twelve,animationTime*1.01);
-  $(div+' > input:text').val('');// clearing main input field when new task added
+  $('input[name="bjattaToDoListInputTextField"]').val('');// clearing main input field when new task added
 }
 
 function pulseOff (el) {$(el).removeClass(typeOffAnimatedChecked+' animated');}
@@ -59,41 +55,29 @@ function deleteOff() {
 }
 
 $('<button>',{
-  text:'»',
-  width: buttonWidthPercent,padding: '2px',
-  float: 'right'
-})
-  .prependTo(div)
+  name:'bjattaToDoListArchiveButton',
+  text:'»'})
+  .prependTo('div[name="bjattaToDoListArchiveDiv"]')
   .on('click',deleteOff)
   .on('focus',function(ev){pulseOn(ev.target);})
   .on('blur',function(ev){pulseOff(ev.target);});
 
-
-span();
-
 $('<input>',{
+    name:'bjattaToDoListInputTextField',
     type:'text',
-    placeholder:' just type U task here...',
-    width: '69%',
-    padding: '4px',
-    float: 'center'
-  }).prependTo(div)
+    placeholder:' just type U task here...'
+  }).prependTo('div[name="bjattaToDoListInputDiv"]')
   .on('keypress',function (ev) { if (13 === ev.keyCode) addTask(ev);})
   .on('focus',function(ev){pulseOn(ev.target);})
   .on('blur',function(ev){pulseOff(ev.target);});
 
-span();
-
 $('<button>',{
-  text:'+',
-  width: buttonWidthPercent,padding: '2px',
-  float: 'left'
-}).prependTo(div)
+  name:'bjattaToDoListPlusButton',
+  text:'+'
+}).prependTo('div[name="bjattaToDoListPlusDiv"]')
   .on('click',addTask)
   .on('focus',function(ev){pulseOn(ev.target);})
   .on('blur',function(ev){pulseOff(ev.target);});
-
-span();
 
 $(div+'>ul.bjattaToDoList').on('change','li',twelve).html(JSON.parse(localStorage.getItem('ToDoList.BelHard.allUl')));
 twelve();

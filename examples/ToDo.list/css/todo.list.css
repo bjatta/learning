@@ -94,17 +94,51 @@ div.bjattaToDoList > ul > li > input[type=checkbox] {
   font-family: inherit;
 }
 
-div.bjattaToDoList > input {
+div.bjattaToDoList {
+  white-space: nowrap;
+}
+
+[name="bjattaToDoListPlusDiv"]{
+  padding-left: 0.3em;
+  align-content: center;
+  text-align: center;
+  float: left;
+  width: 10%;
+}
+
+[name="bjattaToDoListArchiveDiv"]{
+  padding-right: 0.3em;
+  align-content: center;
+  text-align: center;
+  float: right;
+  width: 10%;
+}
+
+[name="bjattaToDoListInputDiv"]{
+  padding-top: 0.1em;
+  align-content: center;
+  text-align: center;
+  float: center;
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+[name = "bjattaToDoListInputTextField"] {
   border: solid 3px white;
-  padding-left: 1em;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   box-shadow: 0 0 7px #369;
   font-family: inherit;
+  max-width: 99%;
+  width: 99%;
 }
 
-div.bjattaToDoList > button {
-  background-color: #369; /* Green */
+[name = "bjattaToDoListArchiveButton"],
+[name = "bjattaToDoListPlusButton"] {
+  background-color: #369;
   border: none;
   color: white;
   text-align: center;
@@ -117,6 +151,8 @@ div.bjattaToDoList > button {
   box-shadow: 0 0 7px #369;
   position: relative;
   top: .05em;
+  width: 99%;
+  max-width: 99%
 }
 
   div.bjattaToDoList > button:focus,
