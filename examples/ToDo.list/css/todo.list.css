@@ -1,0 +1,223 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+
+div.bjattaToDoListMain {
+  width: 22%;
+  border: solid 3px #369;
+  padding: 3px;
+  background: #369;
+  text-align: center;
+  box-shadow: 0 0 7px black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  min-width: 297px;
+}
+
+div.bjattaToDoList {
+  text-align: left;
+  background: white;
+  padding-top: 5px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-family: inherit;
+}
+
+div.bjattaToDoList > ul {
+  padding-bottom: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  list-style-type: none;
+  font-family: inherit;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+div.bjattaToDoList > ul > li {
+  padding-left: 0.5em;
+  font-family: inherit;
+  padding: 0.5em;
+}
+
+div.bjattaToDoList > ul > li:nth-child(even) {
+  background: #369;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+div.bjattaToDoList > ul > li:nth-child(odd) {
+  position: relative;
+  top: 0.3em;
+}
+
+div.bjattaToDoList > ul > li.checked:nth-child(odd) {
+  text-decoration: line-through;
+  opacity: 0.7;
+  font-size: 80%;
+  color: gray;
+  padding-left: 0.7em;
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+
+div.bjattaToDoList > ul > li.checked:nth-child(even) {
+  text-decoration: line-through;
+  opacity: 0.7;
+  font-size: 80%;
+  color: gray;
+  padding-left: 0.7em;
+  padding-top: 0.65em;
+  padding-bottom: 0.65em;
+}
+
+
+div.bjattaToDoList > input:checkbox {
+  border: solid 3px white;
+  padding-left: 1em;
+  font-family: inherit;
+}
+
+div.bjattaToDoList > ul > li > input[type=checkbox] {
+  visibility: hidden;
+}
+
+.infoField,.titleTop {
+  color: white;
+  font-family: inherit;
+}
+
+div.bjattaToDoList > input {
+  border: solid 3px white;
+  padding-left: 1em;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  box-shadow: 0 0 7px #369;
+  font-family: inherit;
+}
+
+div.bjattaToDoList > button {
+  background-color: #369; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 125%;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 7px #369;
+  position: relative;
+  top: .13em;
+}
+
+  div.bjattaToDoList > button:focus,
+  div.bjattaToDoList > input:focus {
+    outline: none;
+    box-shadow: 0 0 14px #369;
+  }
+
+div.bjattaToDoList > ul > li > input:focus  {
+    outline: none;
+    box-shadow: none;
+  }
+
+/* ROUNDED TWO */
+.roundedTwo {
+  position: relative;
+  border-width: 5em;
+}
+
+.roundedTwo label {
+  cursor: pointer;
+  position: absolute;
+  width:  1em;
+  height: 1em;
+
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  left: .5em;
+  top:  .5em;
+
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+  -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+
+  background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+  background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+  background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+  background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+  background: linear-gradient(top, #222 0%, #45484d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#45484d',GradientType=0 );
+}
+
+div.bjattaToDoList > ul > li:nth-child(odd) > label {
+  background: #369;
+}
+
+div.bjattaToDoList > ul > li:nth-child(even) > label {
+  background: white;}
+
+div.bjattaToDoList > ul > li.checked > label{
+width: 1.25em;
+height: 1.25em;
+}
+
+div.bjattaToDoList > ul > li:nth-child(even) > label:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  background: transparent;
+  top: 4px;
+  left: 3px;
+  border: 3px solid #369;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+div.bjattaToDoList > ul > li:nth-child(odd) > label:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  background: transparent;
+  top: 4px;
+  left: 3px;
+  border: 3px solid white;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.roundedTwo input[type=checkbox]:checked + label:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+}

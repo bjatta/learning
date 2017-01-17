@@ -1,0 +1,49 @@
+/*
+	 CSS-Tricks Example
+	 by Chris Coyier
+	 http://css-tricks.com
+*/
+
+* { 
+	margin: 0; 
+	padding: 0; 
+}
+
+body { 
+	font: 14px Georgia, serif;
+	background: #BADA55;  
+	text-align: center; 
+}
+
+#page-wrap { 
+	width: 960px; 
+	margin: 80px auto; 
+}
+
+p { 
+	margin: 40px 300px;
+}
+
+a { 
+	color: red; 
+}
+
+h1 {
+	font-size: 32px;
+	font-family: "Helvetica Neue", Sans-Serif;
+	font-stretch: condensed;
+	text-transform: uppercase;
+}
+
+h1 span {
+  display: inline-block;
+  padding: 10px 20px;
+  background: black;
+	border: 2px solid white;
+  color: white;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 7px black;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>Bubble Point Tooltips with CSS3, HTML5, & jQuery</title>
+	
+	<link rel='stylesheet' href='css/style.css'>
+	<link rel='stylesheet' href='css/tooltips.css'>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<!--[if !IE | (gt IE 8)]><!-->
+	<script src="js/tooltips.js"></script>
+	<script>
+		$(function() {
+			$("#page-wrap a[title]").tooltips();
+		});
+	</script>
+	<!--<![endif]-->
+
+</head>
+
+<body>
+
+	<div id="page-wrap">
+		
+		<h1><span>Bubble Point</span> Tooltips</h1>
+		
+		<p>Pellentesque habitant morbi tristique <a href="#" title="I ❤ ">senectus</a> et netus et malesuada fames ac <a href="#" title="Hi, I'm a tooltip thingy.">turpis</a> egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat <a href="#" title="Ooooh<br>Look at me<br>I'm a fancy tooltip">eleifend</a> leo.</p>
+	
+	</div>
+	
+</body>
+
+</html>

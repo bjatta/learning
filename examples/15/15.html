@@ -1,0 +1,67 @@
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<script LANGUAGE="JavaScript"><!--
+str_vict="ПОЗДРАВЛЯЕМ,ВЫ ЭТО СДЕЛАЛИ!!! ";
+function zamen(n){
+    var n2 ;
+    var oldNumder;
+    for ( var i=0; 16>i; ++i ){if (document.images[i].name=="16"){n2=i;}}
+    if ((n-n2==4) || (n2-n==4) || ((n-n2==1)&&(Math.floor(n/4)==Math.floor(n2/4))) || ((n2-n==1)&&(Math.floor(n/4)==Math.floor(n2/4))) ){
+        oldNumder=document.images[n2].src;
+        document.images[n2].src = document.images[n].src;
+         document.images[n].src= "16.png";
+        document.images[n2].name = document.images[n].name;
+        document.images[n].name = "16";
+    }
+    n2=0
+    for ( var i=0; 13>i; ++i ){if (document.images[i].name==i+1){n2=++n2;}}
+    if ((n2==13) && (document.images[15].name==16)) {alert(str_vict);zan();}
+}
+function zan(){
+    var p1 = new Image();var p2 = new Image();var imgs_ = new Image();var name_;
+    for ( var i=0; 50>i; ++i ){
+        p1 = Math.floor(Math.random()*16);p2 = Math.floor(Math.random()*16);
+        imgs_ = document.images[p1].src;document.images[p1].src = document.images[p2].src;document.images[p2].src = imgs_;
+        name_ = document.images[p1].name;document.images[p1].name = document.images[p2].name;document.images[p2].name = name_;
+    }
+}
+//--></script>
+ 
+<title>Игра на javascript. Пятнашки</title>
+</head>
+ 
+<body>
+<div align="center"><center>
+ 
+<table style="border-color: #369;border-width: 2px" >
+  <tr>
+    <td>
+    <img src="01.png" onclick="zamen(0)" name="01" width="50" height="50">
+    <img src="02.png" onclick="zamen(1)" name="02" width="50" height="50">
+    <img src="03.png" onclick="zamen(2)" name="03" width="50" height="50">
+    <img src="04.png" onclick="zamen(3)" name="04" width="50" height="50"><br>
+    <img src="05.png" onclick="zamen(4)" name="05" width="50" height="50">
+    <img src="06.png" onclick="zamen(5)" name="06" width="50" height="50">
+    <img src="07.png" onclick="zamen(6)" name="07" width="50" height="50">
+    <img src="08.png" onclick="zamen(7)" name="08" width="50" height="50"><br>
+    <img src="09.png" onclick="zamen(8)" name="09" width="50" height="50">
+    <img src="10.png" onclick="zamen(9)" name="10" width="50" height="50">
+    <img src="11.png" onclick="zamen(10)" name="11" width="50" height="50">
+    <img src="12.png" onclick="zamen(11)" name="12" width="50" height="50"><br>
+    <img src="13.png" onclick="zamen(12)" name="13" width="50" height="50">
+    <img src="14.png" onclick="zamen(13)" name="14" width="50" height="50">
+    <img src="15.png" onclick="zamen(14)" name="15" width="50" height="50">
+    <img src="16.png" onclick="zamen(15)" name="16" width="50" height="50"><br>
+    </td>
+    <H1><td bgcolor="#369"><div><p align="center" style="color: white;"><font face="Fixedsys" size="5">Любите игру пятнашки?</font>
+    <font face="MS Sans Serif" size="2" ><br></H1>
+    Передвигайте цифры (нажатием<br>
+    кнопки мышки на кость рядом с пустой).<br>
+    </font></p>
+    <p align="center"><input onclick="zan()" style="font-size: 10; font-weight: bold"
+    type="button" value="Новая игра"> </p>
+    </div></td>
+  </tr>
+</table>
+</center></div>
+</body>

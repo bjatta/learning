@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+  <body>
+    <div>
+        Дайте мне рамку
+        <p>меня покрасить в красный</p>
+    </div>
+    <h1>мне сделать рамку и покрасить в красный</h1>
+  </body>
+  <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+  <button onclick="$('h1').css({border:'dashed',color:'blue'});"></button>
+  <script>
+  var el = ['div','p','h1','h1'];
+  var action = [{border:'solid 1px red'},{color:'#369'},{border:'dashed 2px #396',color:'green'}];
+
+  for (var i = 0; i < el.length; i++) {
+    $(el[i]).css(action[i]);
+}
+  </script>
+</html>
