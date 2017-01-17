@@ -58,7 +58,11 @@ function deleteOff() {
   }
 }
 
-$('<button>',{text:'»',width: buttonWidthPercent,padding: '2px'})
+$('<button>',{
+  text:'»',
+  width: buttonWidthPercent,padding: '2px',
+  float: 'right'
+})
   .prependTo(div)
   .on('click',deleteOff)
   .on('focus',function(ev){pulseOn(ev.target);})
@@ -71,7 +75,8 @@ $('<input>',{
     type:'text',
     placeholder:' just type U task here...',
     width: '69%',
-    padding: '4px'
+    padding: '4px',
+    float: 'center'
   }).prependTo(div)
   .on('keypress',function (ev) { if (13 === ev.keyCode) addTask(ev);})
   .on('focus',function(ev){pulseOn(ev.target);})
@@ -79,7 +84,11 @@ $('<input>',{
 
 span();
 
-$('<button>',{text:'+',width: buttonWidthPercent,padding: '2px'}).prependTo(div)
+$('<button>',{
+  text:'+',
+  width: buttonWidthPercent,padding: '2px',
+  float: 'left'
+}).prependTo(div)
   .on('click',addTask)
   .on('focus',function(ev){pulseOn(ev.target);})
   .on('blur',function(ev){pulseOff(ev.target);});
