@@ -1,33 +1,4 @@
-$li > input {
-  text-decoration: line-through;
-  color: rgba(0,0,0,.3);
-}
-li < input {
-  text-decoration: line-through;
-  color: rgba(0,0,0,.3);
-}
-input:checked {opacity: .5;}
-li:first-child(input) {
-  text-decoration: line-through;
-  color: rgba(0,0,0,.3);
-}
-*! < input:checked {
-  color: red;
-}
-
-li:nth-child(even) {background: #CCC}
-
-ul {
-  padding-bottom: 1em;
-  padding-right: 3em;
-  list-style-type: none;
-  }
-
-li {
-  border-style: solid;
-  border-width: 3px;
-  border-color: #CCC;
-} 
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 div.bjattaToDoListMain {
   width: 22%;
@@ -35,18 +6,95 @@ div.bjattaToDoListMain {
   padding: 3px;
   background: #369;
   text-align: center;
-}
-
-div {
-  text-align: left;
+  box-shadow: 0 0 7px black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  min-width: 297px;
 }
 
 div.bjattaToDoList {
+  text-align: left;
   background: white;
   padding-top: 5px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  font-family: inherit;
+}
+
+div.bjattaToDoList > ul {
+  padding-bottom: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  list-style-type: none;
+  font-family: inherit;
+  }
+
+div.bjattaToDoList > ul > li {
+  padding-left: 0.5em;
+  font-family: inherit;
+  height: 1.5em;
+}
+
+div.bjattaToDoList > ul > li:nth-child(even) {
+  background: #CCC;
+  box-shadow: 0 0 7px black;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+div.bjattaToDoList > ul > li.checked {
+  text-decoration: line-through;
+  opacity: 0.7;
+  font-size: 80%;
+  color: gray;
+  height: 1.85em;
+  padding-left: 0.7em;
 }
 
 div.bjattaToDoList > input:checkbox {
   border: solid 3px white;
   padding-left: 1em;
+  font-family: inherit;
 }
+
+.infoField,.titleTop {
+  color: white;
+  font-family: inherit;
+}
+
+div.bjattaToDoList > input {
+  border: solid 3px white;
+  padding-left: 1em;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  box-shadow: 0 0 7px #369;
+  font-family: inherit;
+}
+
+div.bjattaToDoList > button {
+  background-color: #369; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 125%;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  box-shadow: 0 0 7px #369;
+  position: relative;
+  top: .13em;
+}
+
+  div.bjattaToDoList > button:focus,
+  div.bjattaToDoList > input:focus {
+    outline: none;
+    box-shadow: 0 0 14px #369;
+  }
+
+div.bjattaToDoList > ul > li > input:focus  {
+    outline: none;
+    box-shadow: none;
+  }
