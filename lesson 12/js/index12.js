@@ -14,6 +14,7 @@ function twelve(ev) {                          // count and make lower status st
       $(ev.target).attr('checked','checked').parent().removeClass(typeOffAnimatedEffect).addClass(typeOffAnimatedChecked).addClass('checked');
     else
       $(ev.target).removeAttr('checked','checked').parent().removeClass(typeOffAnimatedChecked).addClass(typeOffAnimatedEffect).removeClass('checked');
+    console.log(ev);
   $('span.infoField').text(' total: ' + $('li').length + ' done: ' + $('li>input:checked').length);
   localStorage.setItem('ToDoList.BelHard.allUl',JSON.stringify(document.querySelector('ul').innerHTML));
 }
@@ -24,7 +25,7 @@ function span () {                             // Just add span (for compacting 
 
 function taskDo(ev){
   var textForNewItem = $('div.bjattaToDoList > input:text').val();
-  if (textForNewItem.length) $('<li>',{text:textForNewItem,class:'bounceInDown animated'}).appendTo('div.bjattaToDoList>ul').prepend($('<input>',{'type':'checkbox'}));
+  if (textForNewItem.length) $('<li>',{text:textForNewItem,class:'bounceInDown animated roundedTwo'}).appendTo('div.bjattaToDoList>ul').prepend($('<input>',{'type':'checkbox'}));
     pulseOn($(ev.target));
     setTimeout(pulseOff,1000,$(ev.target));
   twelve();
@@ -61,6 +62,8 @@ span();
 $('<button>',{text:'+',width: buttonWidthPercent,padding: '2px'}).prependTo('div.bjattaToDoList').on('click',taskDo);
 
 span();
+
+//if ('undefined' == typeOf(window.Storage)) { alert('Storage turned off...'); }
 
 $('ul').on('change','li',twelve).html(JSON.parse(localStorage.getItem('ToDoList.BelHard.allUl')));twelve();
 })();

@@ -1,0 +1,24 @@
+<!Doctype HTML>
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<style>
+    	@import url('https://fonts.googleapis.com/css?family=Exo+2');
+    	body,form,button,input {
+    			font-family: 'Exo 2', sans-serif;
+    			src: "url('https://fonts.googleapis.com/css?family=Exo+2')";
+    			font-weight: bold;
+    	}
+    	</style>
+    </head>
+    <body>
+        <form name='f1' onsubmit="return false;" style="width: 50ex">
+        	<div id='counterBorder' align='center'>&nbsp</div>
+        	<input type='number' min="0" max="99" name='myNumber' placeholder=' Угадай число от 0 до 99? ' style="width:26ex"></input>
+        	<button onclick='guessNumber()'>Ok</button>
+        	<button onclick='addStepToLog()'> Clear log?</button>
+        </form>
+        <script src="js/hw07.js"></script>
+        <div style='float:left;' name='steps'>&nbsp</div>
+    </body>
+</html>

@@ -9,6 +9,7 @@ div.bjattaToDoListMain {
   box-shadow: 0 0 7px black;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  border-radius: 10px;
   font-family: 'Exo 2', sans-serif;
   font-weight: bold;
   min-width: 297px;
@@ -20,6 +21,7 @@ div.bjattaToDoList {
   padding-top: 5px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  border-radius: 10px;
   font-family: inherit;
 }
 
@@ -42,6 +44,7 @@ div.bjattaToDoList > ul > li:nth-child(even) {
   box-shadow: 0 0 7px black;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
 div.bjattaToDoList > ul > li.checked {
@@ -59,6 +62,10 @@ div.bjattaToDoList > input:checkbox {
   font-family: inherit;
 }
 
+div.bjattaToDoList > input[type=checkbox].new {
+  visibility: none;
+}
+
 .infoField,.titleTop {
   color: white;
   font-family: inherit;
@@ -69,6 +76,7 @@ div.bjattaToDoList > input {
   padding-left: 1em;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  border-radius: 10px;
   box-shadow: 0 0 7px #369;
   font-family: inherit;
 }
@@ -83,6 +91,7 @@ div.bjattaToDoList > button {
   font-size: 125%;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  border-radius: 10px;
   box-shadow: 0 0 7px #369;
   position: relative;
   top: .13em;

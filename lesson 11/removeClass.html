@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://js.cx/test/libs.js"></script>
+</head>
+
+<body>
+
+  <script>
+    function removeClass(obj, cls) {
+      var classes = obj.className.split(' ');
+      var classesNew = [];
+
+      classes.forEach(function (classOld) {
+        if (classOld != cls) classesNew.push(classOld);
+      });
+    obj.className = classesNew.join(' ');
+    }
+
+    var obj = {
+  className: 'open menu menu'
+}
+
+removeClass(obj, 'blabla');
+removeClass(obj, 'menu');
+alert(obj.className);
+
+  </script>
+
+</body>
+
+</html>
