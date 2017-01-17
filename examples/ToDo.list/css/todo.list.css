@@ -13,6 +13,14 @@ div.bjattaToDoListMain {
   font-family: 'Exo 2', sans-serif;
   font-weight: bold;
   min-width: 300px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+   -khtml-user-select: none; /* Konqueror */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                not supported by any browser */
+    outline: none;
 }
 
 div.bjattaToDoList {
@@ -62,7 +70,6 @@ div.bjattaToDoList > ul > li.checked:nth-child(odd) {
   text-decoration: line-through;
   opacity: 0.7;
   font-size: 80%;
-  color: gray;
   padding-left: 0.7em;
   padding-top: 0.65em;
   padding-bottom: 0.65em;
@@ -72,7 +79,6 @@ div.bjattaToDoList > ul > li.checked:nth-child(even) {
   text-decoration: line-through;
   opacity: 0.7;
   font-size: 80%;
-  color: gray;
   padding-left: 0.7em;
   padding-top: 0.65em;
   padding-bottom: 0.65em;
@@ -100,21 +106,36 @@ div.bjattaToDoList {
 
 [name="bjattaToDoListPlusDiv"]{
   padding-left: 0.3em;
-  align-content: center;
-  text-align: center;
+  align-content: right;
+  text-align: right;
   float: left;
-  width: 10%;
+  width: 12%;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 [name="bjattaToDoListArchiveDiv"]{
   padding-right: 0.3em;
-  align-content: center;
-  text-align: center;
+  align-content: left;
+  text-align: left;
   float: right;
-  width: 10%;
+  width: 12%;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 [name="bjattaToDoListInputDiv"]{
+  padding: none;
   padding-top: 0.1em;
   align-content: center;
   text-align: center;
@@ -123,21 +144,39 @@ div.bjattaToDoList {
   display: block;
   margin-left: auto;
   margin-right: auto;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 
 [name = "bjattaToDoListInputTextField"] {
+  display: inline-block;
   border: solid 3px white;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   box-shadow: 0 0 7px #369;
   font-family: inherit;
-  max-width: 99%;
-  width: 99%;
+  max-width: 95%;
+  width: 95%;
+  padding-left: .5em;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+    outline: none;
 }
 
 [name = "bjattaToDoListArchiveButton"],
 [name = "bjattaToDoListPlusButton"] {
+  padding: none;
   background-color: #369;
   border: none;
   color: white;
@@ -150,9 +189,16 @@ div.bjattaToDoList {
   border-radius: 10px;
   box-shadow: 0 0 7px #369;
   position: relative;
-  top: .05em;
   width: 99%;
   max-width: 99%
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+    outline: none;
 }
 
   div.bjattaToDoList > button:focus,
@@ -222,7 +268,6 @@ div.bjattaToDoList > ul > li:nth-child(even) > label:after {
   border: 3px solid #369;
   border-top: none;
   border-right: none;
-
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);

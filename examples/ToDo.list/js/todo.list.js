@@ -54,6 +54,17 @@ function deleteOff() {
   }
 }
 
+$('<div>',{class:'bjattaToDoListMain',name:'bjattaToDoListMainDiv'}).appendTo('body')
+  .append($('<p>',{class:'titleTop',text:'ToDo list'}));
+
+$('<div>',{class:'bjattaToDoList'}).appendTo('div[name="bjattaToDoListMainDiv"]')
+  .append($('<div>',{'name':'bjattaToDoListPlusDiv'}))
+  .append($('<div>',{'name':'bjattaToDoListArchiveDiv'}))
+  .append($('<div>',{'name':'bjattaToDoListInputDiv'}))
+  .append($('<ul>',{'name':'bjattaToDoListUl',class:'bjattaToDoList'}))
+  .append($('<p>',{'name':'bjattaToDoListStatusString',class:'bjattaToDoList statusString'}))
+  .append($('<span>',{'name':'bjattaToDoListInfoField',class:'infoField'}));
+
 $('<button>',{
   name:'bjattaToDoListArchiveButton',
   text:'»'})
