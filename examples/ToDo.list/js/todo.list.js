@@ -47,8 +47,8 @@ function addTask(ev){
   $(div+' > input:text').val('');// clearing main input field when new task added
 }
 
-function pulseOff (ev) {  $(ev).removeClass(typeOffAnimatedChecked+' animated');}
-function pulseOn  (ev) {  $(ev).addClass(typeOffAnimatedChecked+' animated');}
+function pulseOff (el) {$(el).removeClass(typeOffAnimatedChecked+' animated');}
+function pulseOn  (el) {$(el).addClass(typeOffAnimatedChecked+' animated');}
 
 function deleteOff() {
   var checkedLi = $(liInputs+':checked').parent();
@@ -60,7 +60,10 @@ function deleteOff() {
 
 $('<button>',{text:'»',width: buttonWidthPercent,padding: '2px'})
   .prependTo(div)
-  .on('click',deleteOff);
+  .on('click',deleteOff)
+  .on('focus',function(ev){pulseOn(ev.target);})
+  .on('blur',function(ev){pulseOff(ev.target);});
+
 
 span();
 
@@ -68,15 +71,18 @@ $('<input>',{
     type:'text',
     placeholder:' just type U task here...',
     width: '69%',
-    padding: '5px'
+    padding: '4px'
   }).prependTo(div)
   .on('keypress',function (ev) { if (13 === ev.keyCode) addTask(ev);})
-  .on('focus',pulseOn)
-  .on('blur',pulseOff);
+  .on('focus',function(ev){pulseOn(ev.target);})
+  .on('blur',function(ev){pulseOff(ev.target);});
 
 span();
 
-$('<button>',{text:'+',width: buttonWidthPercent,padding: '2px'}).prependTo(div).on('click',addTask);
+$('<button>',{text:'+',width: buttonWidthPercent,padding: '2px'}).prependTo(div)
+  .on('click',addTask)
+  .on('focus',function(ev){pulseOn(ev.target);})
+  .on('blur',function(ev){pulseOff(ev.target);});
 
 span();
 
