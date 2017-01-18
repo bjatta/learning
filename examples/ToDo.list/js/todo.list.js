@@ -9,11 +9,15 @@ var div                     = 'div.bjattaToDoList';
 var liInputs                = 'div.bjattaToDoList > ul.bjattaToDoList > li > input';
 var li                      = 'div.bjattaToDoList > ul.bjattaToDoList > li';
 
-function twelve() {                            // count and make lower status string  
+function storeUI () {
+  localStorage.setItem('ToDoList.BelHard.allUl',JSON.stringify(document.querySelector(div+'>ul.bjattaToDoList').innerHTML));
+}
+
+function summryInfo() {                            // count and make lower status string  
   $('span.infoField').text(' total: '
     + $(liInputs).length
     + ' done: ' + $(liInputs+':checked').length);
-  localStorage.setItem('ToDoList.BelHard.allUl',JSON.stringify(document.querySelector(div+'>ul.bjattaToDoList').innerHTML));
+  setTimeout(storeUI,animationTime);
 }
 
 function toggleInputCheckbox (ev) {
@@ -35,7 +39,7 @@ function toggleInputCheckbox (ev) {
 
     pulseOn(ev.currentTarget);
     setTimeout(pulseOff,animationTime,ev.currentTarget);
-    setTimeout(twelve,animationTime*1.01);
+    setTimeout(summryInfo,animationTime*1.01);
 }
 
 function addTask(ev){
@@ -48,7 +52,7 @@ function addTask(ev){
       .on('click',toggleInputCheckbox);
     pulseOn(ev.target);
     setTimeout(pulseOff,animationTime,ev.target);
-    setTimeout(twelve,animationTime*1.01);
+    setTimeout(summryInfo,animationTime*1.01);
   $('input[name="bjattaToDoListInputTextField"]').val('');// clearing main input field when new task added
 }
 
@@ -59,7 +63,7 @@ function deleteOff() {
   var checkedLi = $(liInputs+':checked').parent();
   for (var i = checkedLi.length - 1; i >= 0; i--) {
     setTimeout(function(el){$(el).addClass(typeOffAnimatedDelete);},i*150,checkedLi[i]);
-    setTimeout(function(el){$(el).remove();twelve();},(i-1)*150+animationTime*1.05,checkedLi[i])
+    setTimeout(function(el){$(el).remove();summryInfo();},(i-1)*150+animationTime*1.05,checkedLi[i])
   }
 }
 
@@ -102,17 +106,18 @@ $('<button>',{
 
 $('#bjattaToDoListMainDiv')
   .draggable()
-  .on('mouseout',
+  .on('mouseup',
     function(){
       localStorage.setItem('ToDoList.BelHard.LastPosition',
         JSON.stringify($('#bjattaToDoListMainDiv').attr('style')));
+      summryInfo();
     })
   .attr('style',JSON.parse(localStorage.getItem('ToDoList.BelHard.LastPosition')));
 $('#bjattaToDoListUl')
   .sortable()
-  .on('change','li',twelve)
+  .on('change','li',summryInfo)
   .html(JSON.parse(localStorage.getItem('ToDoList.BelHard.allUl')));
 $('#bjattaToDoListUl > li').addClass(typeOffAnimatedEffect);
-twelve();
+summryInfo();
 $(li).on('click',toggleInputCheckbox);
 })();
