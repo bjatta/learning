@@ -13,14 +13,7 @@ div.bjattaToDoListMain {
   font-family: 'Exo 2', sans-serif;
   font-weight: bold;
   min-width: 300px;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Chrome/Safari/Opera */
-   -khtml-user-select: none; /* Konqueror */
-     -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                not supported by any browser */
-    outline: none;
+  outline: none;
 }
 
 div.bjattaToDoList {
