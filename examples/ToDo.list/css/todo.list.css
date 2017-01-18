@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 div.bjattaToDoListMain {
+  position: relative;
   width: 22%;
   border: solid 3px #369;
   padding: 3px;

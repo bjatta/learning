@@ -52,7 +52,7 @@ function addTask(ev){
       .on('click',toggleInputCheckbox);
     pulseOn(ev.target);
     setTimeout(pulseOff,animationTime,ev.target);
-    setTimeout(summryInfo,animationTime*1.01);
+    setTimeout(summryInfo,animationTime*1.1);
   $('input[name="bjattaToDoListInputTextField"]').val('');// clearing main input field when new task added
 }
 
@@ -63,11 +63,14 @@ function deleteOff() {
   var checkedLi = $(liInputs+':checked').parent();
   for (var i = checkedLi.length - 1; i >= 0; i--) {
     setTimeout(function(el){$(el).addClass(typeOffAnimatedDelete);},i*150,checkedLi[i]);
-    setTimeout(function(el){$(el).remove();summryInfo();},(i-1)*150+animationTime*1.05,checkedLi[i])
+    setTimeout(function(el){$(el).remove();summryInfo();},(i-1)*160+animationTime*.9,checkedLi[i])
   }
 }
 
-$('<div>',{class:'bjattaToDoListMain',name:'bjattaToDoListMainDiv',id:'bjattaToDoListMainDiv'}).appendTo('body')
+$('<div>',{ class:'bjattaToDoListMain ui-draggable ui-draggable-handle',
+            name:'bjattaToDoListMainDiv',
+            id:'bjattaToDoListMainDiv'})
+  .appendTo('body')
   .append($('<p>',{class:'titleTop',text:'ToDo list'}));
 
 $('<div>',{class:'bjattaToDoList'}).appendTo('div[name="bjattaToDoListMainDiv"]')
