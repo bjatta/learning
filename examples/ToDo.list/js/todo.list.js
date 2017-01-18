@@ -1,12 +1,10 @@
 (function(){
-/*
-Initial value for effects of animation
-*/
+/* Initial value for effects of animation */
 var typeOffAnimatedDelete   = 'bounceOutRight';// archiving
 var typeOffAnimatedEffect 	= 'bounceInDown';  // appearance
 var typeOffAnimatedChecked	= 'bounceIn';      // selection (press or focus)
 var buttonWidthPercent      = '10%';           // size for button around input
-var animationTime           = 800;
+var animationTime           = 900;
 var div                     = 'div.bjattaToDoList';
 var liInputs                = 'div.bjattaToDoList > ul.bjattaToDoList > li > input';
 var li                      = 'div.bjattaToDoList > ul.bjattaToDoList > li';
@@ -21,9 +19,20 @@ function twelve() {                            // count and make lower status st
 function toggleInputCheckbox (ev) {
   if (ev)
     if (!ev.currentTarget.firstChild.checked)
-      $(ev.currentTarget.firstChild).attr('checked','checked').parent().removeClass(typeOffAnimatedEffect).addClass(typeOffAnimatedChecked).addClass('checked');
+      $(ev.currentTarget.firstChild)
+        .attr('checked','checked')
+        .parent()
+        .removeClass(typeOffAnimatedEffect)
+        .addClass(typeOffAnimatedChecked)
+        .addClass('checked');
     else
-      $(ev.currentTarget.firstChild).removeAttr('checked','checked').parent().removeClass(typeOffAnimatedChecked).addClass(typeOffAnimatedEffect).removeClass('checked');
+      $(ev.currentTarget.firstChild)
+    .removeAttr('checked','checked')
+    .parent()
+    .removeClass(typeOffAnimatedChecked)
+    .addClass(typeOffAnimatedEffect)
+    .removeClass('checked');
+
     pulseOn(ev.currentTarget);
     setTimeout(pulseOff,animationTime,ev.currentTarget);
     setTimeout(twelve,animationTime*1.01);
@@ -62,8 +71,9 @@ $('<div>',{class:'bjattaToDoList'}).appendTo('div[name="bjattaToDoListMainDiv"]'
   .append($('<div>',{'name':'bjattaToDoListArchiveDiv'}))
   .append($('<div>',{'name':'bjattaToDoListInputDiv'}))
   .append($('<ul>',{'name':'bjattaToDoListUl',class:'bjattaToDoList'}))
-  .append($('<p>',{'name':'bjattaToDoListStatusString',class:'bjattaToDoList statusString'}))
-  .append($('<span>',{'name':'bjattaToDoListInfoField',class:'infoField'}));
+  .append($('<p>',{'name':'bjattaToDoListStatusString',class:'bjattaToDoList statusString'}));
+
+  ($('<span>',{'name':'bjattaToDoListInfoField',class:'infoField'})).appendTo('div[name="bjattaToDoListMainDiv"]');
 
 $('<button>',{
   name:'bjattaToDoListArchiveButton',
