@@ -1,13 +1,13 @@
-(function(){
+(function($,pluginNumber){
 /* Initial value for effects of animation */
-var typeOffAnimatedDelete   = 'bounceOutRight animated';// archiving
-var typeOffAnimatedEffect 	= 'bounceInDown animated';  // appearance
-var typeOffAnimatedChecked	= 'bounceIn animated';      // selection (press or focus)
-var buttonWidthPercent      = '10%';           // size for button around input
-var animationTime           = 900;
-var div                     = 'div.bjattaToDoList';
-var liInputs                = 'div.bjattaToDoList > ul.bjattaToDoList > li > input';
-var li                      = 'div.bjattaToDoList > ul.bjattaToDoList > li';
+var typeOffAnimatedDelete   = 'bounceOutRight animated',// archiving
+    typeOffAnimatedEffect 	= 'bounceInDown animated',  // appearance
+    typeOffAnimatedChecked	= 'bounceIn animated',      // selection (press or focus)
+    buttonWidthPercent      = '10%',           // size for button around input
+    animationTime           = 900,
+    div                     = 'div.bjattaToDoList',
+    liInputs                = 'div.bjattaToDoList > ul.bjattaToDoList > li > input',
+    li                      = 'div.bjattaToDoList > ul.bjattaToDoList > li';
 
 function storeUI () {
   localStorage.setItem('ToDoList.BelHard.allUl',JSON.stringify(document.querySelector(div+'>ul.bjattaToDoList').innerHTML));
@@ -46,6 +46,13 @@ function addTask(ev){
   var textForNewItem = $('input[name="bjattaToDoListInputTextField"]').val();
   if (textForNewItem.length)
     $('<li>',{text:textForNewItem, class:'roundedTwo bounceInDown animated'})
+      .css({'white-space':'pre-wrap',
+            'hyphens':'auto',
+            'list-style-position':'inside',
+            'white-space': 'nowrap',
+            'overflow': 'hidden',
+            'text-overflow': 'ellipsis'
+            })
       .appendTo(div+'>ul')
       .prepend($('<input>',{'type':'checkbox'}))
       .append($('<label>'))
@@ -67,6 +74,8 @@ function deleteOff() {
   }
 }
 
+if (!pluginNumber) {pluginNumber='';}
+
 $('<div>',{ class:'bjattaToDoListMain ui-draggable ui-draggable-handle',
             name:'bjattaToDoListMainDiv',
             id:'bjattaToDoListMainDiv'})
@@ -80,7 +89,8 @@ $('<div>',{class:'bjattaToDoList'}).appendTo('div[name="bjattaToDoListMainDiv"]'
   .append($('<ul>',{'name':'bjattaToDoListUl',class:'bjattaToDoList',id:'bjattaToDoListUl'}))
   .append($('<p>',{'name':'bjattaToDoListStatusString',class:'bjattaToDoList statusString'}));
 
-  ($('<span>',{'name':'bjattaToDoListInfoField',class:'infoField'})).appendTo('div[name="bjattaToDoListMainDiv"]');
+$('<span>',{'name':'bjattaToDoListInfoField',class:'infoField'})
+  .appendTo('div[name="bjattaToDoListMainDiv"]');
 
 $('<button>',{
   name:'bjattaToDoListArchiveButton',
@@ -123,4 +133,4 @@ $('#bjattaToDoListUl')
 $('#bjattaToDoListUl > li').addClass(typeOffAnimatedEffect);
 summryInfo();
 $(li).on('click',toggleInputCheckbox);
-})();
+})(jQuery);
