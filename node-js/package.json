@@ -1,0 +1,23 @@
+{
+  "name": "node-js",
+  "version": "0.0.1",
+  "description": "bjatta`s road to gulp saas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {},
+  "engines": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/learning/node-js"
+  },
+  "keywords": [
+    "node",
+    "bjatta",
+    "gulp"
+  ],
+  "devDependencies": {
+    "gulp-sass": "^3.1.0"
+  }
+}
