@@ -3,6 +3,11 @@
 $mainThemeColor: #369;
 $paddingButton: 0.175em;
 $widthForButton: 14%;
+$animationTime: 1s;
+$animationType: drawLine;
+
+@keyframes drawLine {  0% {    clip: rect(0, 0, 0, 0);  } }
+@keyframes slide {  from {width:0;} to {width:28.6em;}};
 
 div.bjattaToDoListMain {
   position: relative;
@@ -45,73 +50,76 @@ div.bjattaToDoListMain {
           width: 28.6em;
           height: 4.8em;
         }
-        input[type=checkbox]:checked + label:after {
-          opacity: 1;
-        }
-        label {
-          cursor: pointer;
-          position: absolute;
-          width: $paddingButton*6.5;
-          height: $paddingButton*6.5;
-          border-radius: $paddingButton*7;
-          left: $paddingButton;
-          top: $paddingButton;
-          box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 1);
-        }
-        label:after {
-          opacity: 0;
-          content: '';
-          position: absolute;
-          width: 9px;
-          height: 5px;
-          background: transparent;
-          top: 4px;
-          left: 3px;
-          border-top: none;
-          border-right: none;
-          transform: rotate(-45deg);
-        }
-        input[type=checkbox] {
-          visibility: hidden;
-        }
       }
-      li:nth-child(even) {
-        background: $mainThemeColor;
-        border-radius: 10px;
-        color: white;
 
-        label {
-          border-color: white;
-        }
+      input[type=checkbox]:checked + label:after {
+        opacity: 1;
       }
-      li:nth-child(odd) {
-        label {
-          border-color: $mainThemeColor;
-        }
+      label {
+        cursor: pointer;
+        position: absolute;
+        width: $paddingButton*6.5;
+        height: $paddingButton*6.5;
+        border-radius: $paddingButton*7;
+        left: $paddingButton;
+        top: $paddingButton;
+        box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 1);
       }
-      li.checked {
-        font-size: 80%;
-        padding-bottom: $paddingButton*2;
+      label:after {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 4px;
+        left: 3px;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
+      }
+      input[type=checkbox] {
+        visibility: hidden;
+      }
+    }
+    li:nth-child(even) {
+      background: $mainThemeColor;
+      border-radius: 10px;
+      color: white;
 
-        img {
-          opacity: .7;
-        }
-        label {
-          font-size: 125%;
-        }
-        label:after {
-          opacity: 1;
-          content: '';
-          position: absolute;
-          width: 9px;
-          height: 5px;
-          border: solid $paddingButton;
-          top: 4px;
-          left: 3px;
-          border-top: none;
-          border-right: none;
-          transform: rotate(-45deg);
-        }
+      label {
+        border-color: white;
+      }
+    }
+    li:nth-child(odd) {
+      label {
+        border-color: $mainThemeColor;
+      }
+    }
+    li.checked {
+      font-size: 80%;
+      padding-bottom: $paddingButton*2;
+
+      img {
+        opacity: .7;
+        animation: $animationType $animationTime;
+        clip: rect(0, 28.6em, 28.6em, 0);
+      }
+      label {
+        font-size: 125%;
+      }
+      label:after {
+        opacity: 1;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        border: solid $paddingButton;
+        top: 4px;
+        left: 3px;
+        border-top: none;
+        border-right: none;
+        transform: rotate(-45deg);
       }
     }
     [name="bjattaToDoListPlusDiv"] {

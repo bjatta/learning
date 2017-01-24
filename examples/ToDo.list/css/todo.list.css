@@ -1,4 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Exo+2");
+@-webkit-keyframes drawLine {
+  0% {
+    clip: rect(0, 0, 0, 0); } }
+@keyframes drawLine {
+  0% {
+    clip: rect(0, 0, 0, 0); } }
+
+@-webkit-keyframes slide {
+  from {
+    width: 0; }
+  to {
+    width: 28.6em; } }
+
+@keyframes slide {
+  from {
+    width: 0; }
+  to {
+    width: 28.6em; } }
+
 div.bjattaToDoListMain {
   position: relative;
   width: 22%;
@@ -37,77 +56,85 @@ div.bjattaToDoListMain {
           opacity: 0;
           width: 28.6em;
           height: 4.8em; }
-        div.bjattaToDoListMain div.bjattaToDoList ul li input[type=checkbox]:checked + label:after {
-          opacity: 1; }
-        div.bjattaToDoListMain div.bjattaToDoList ul li label {
-          cursor: pointer;
-          position: absolute;
-          width: 1.1375em;
-          height: 1.1375em;
-          border-radius: 1.225em;
-          left: 0.175em;
-          top: 0.175em;
-          box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white; }
-        div.bjattaToDoListMain div.bjattaToDoList ul li label:after {
-          opacity: 0;
-          content: '';
-          position: absolute;
-          width: 9px;
-          height: 5px;
-          background: transparent;
-          top: 4px;
-          left: 3px;
-          border-top: none;
-          border-right: none;
-          -ms-transform: rotate(-45deg);
-              transform: rotate(-45deg); }
-        div.bjattaToDoListMain div.bjattaToDoList ul li input[type=checkbox] {
-          visibility: hidden; }
-      div.bjattaToDoListMain div.bjattaToDoList ul li:nth-child(even) {
-        background: #369;
-        border-radius: 10px;
-        color: white; }
-        div.bjattaToDoListMain div.bjattaToDoList ul li:nth-child(even) label {
-          border-color: white; }
-      div.bjattaToDoListMain div.bjattaToDoList ul li:nth-child(odd) label {
-        border-color: #369; }
-      div.bjattaToDoListMain div.bjattaToDoList ul li.checked {
-        font-size: 80%;
-        padding-bottom: 0.35em; }
-        div.bjattaToDoListMain div.bjattaToDoList ul li.checked img {
-          opacity: .7; }
-        div.bjattaToDoListMain div.bjattaToDoList ul li.checked label {
-          font-size: 125%; }
-        div.bjattaToDoListMain div.bjattaToDoList ul li.checked label:after {
-          opacity: 1;
-          content: '';
-          position: absolute;
-          width: 9px;
-          height: 5px;
-          border: solid 0.175em;
-          top: 4px;
-          left: 3px;
-          border-top: none;
-          border-right: none;
-          -ms-transform: rotate(-45deg);
-              transform: rotate(-45deg); }
+      div.bjattaToDoListMain div.bjattaToDoList ul input[type=checkbox]:checked + label:after {
+        opacity: 1; }
+      div.bjattaToDoListMain div.bjattaToDoList ul label {
+        cursor: pointer;
+        position: absolute;
+        width: 1.1375em;
+        height: 1.1375em;
+        border-radius: 1.225em;
+        left: 0.175em;
+        top: 0.175em;
+        box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white; }
+      div.bjattaToDoListMain div.bjattaToDoList ul label:after {
+        opacity: 0;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        background: transparent;
+        top: 4px;
+        left: 3px;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+      div.bjattaToDoListMain div.bjattaToDoList ul input[type=checkbox] {
+        visibility: hidden; }
+    div.bjattaToDoListMain div.bjattaToDoList li:nth-child(even) {
+      background: #369;
+      border-radius: 10px;
+      color: white; }
+      div.bjattaToDoListMain div.bjattaToDoList li:nth-child(even) label {
+        border-color: white; }
+    div.bjattaToDoListMain div.bjattaToDoList li:nth-child(odd) label {
+      border-color: #369; }
+    div.bjattaToDoListMain div.bjattaToDoList li.checked {
+      font-size: 80%;
+      padding-bottom: 0.35em; }
+      div.bjattaToDoListMain div.bjattaToDoList li.checked img {
+        opacity: .7;
+        -webkit-animation: drawLine 1s;
+                animation: drawLine 1s;
+        clip: rect(0, 28.6em, 28.6em, 0); }
+      div.bjattaToDoListMain div.bjattaToDoList li.checked label {
+        font-size: 125%; }
+      div.bjattaToDoListMain div.bjattaToDoList li.checked label:after {
+        opacity: 1;
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 5px;
+        border: solid 0.175em;
+        top: 4px;
+        left: 3px;
+        border-top: none;
+        border-right: none;
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
     div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListPlusDiv"] {
-      -ms-flex-line-pack: right;
-          align-content: right;
+      -webkit-align-content: right;
+          -ms-flex-line-pack: right;
+              align-content: right;
       text-align: right;
       float: left;
       width: 14%; }
     div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListArchiveDiv"] {
-      -ms-flex-line-pack: left;
-          align-content: left;
+      -webkit-align-content: left;
+          -ms-flex-line-pack: left;
+              align-content: left;
       text-align: left;
       float: right;
       width: 14%; }
     div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListInputDiv"] {
       padding: none;
       padding-top: 0.175em;
-      -ms-flex-line-pack: center;
-          align-content: center;
+      -webkit-align-content: center;
+          -ms-flex-line-pack: center;
+              align-content: center;
       text-align: center;
       float: center;
       width: 68%;

@@ -8,7 +8,7 @@
     div = 'div.bjattaToDoList',
     liInputs = 'div.bjattaToDoList > ul.bjattaToDoList > li > input',
     li = 'div.bjattaToDoList > ul.bjattaToDoList > li',
-    crossingLine = 'yellow.png';
+    crossingLine = 'img/yellow.png';
 
   function storeUI() {
     localStorage.setItem('ToDoList.BelHard.allUl', JSON.stringify(document.querySelector(div + '>ul.bjattaToDoList').innerHTML));
@@ -25,17 +25,16 @@
         $(ev.currentTarget.firstChild)
         .attr('checked', 'checked')
         .parent()
-        .removeClass(typeOffAnimatedEffect)
-        .addClass(typeOffAnimatedChecked)
+//        .removeClass(typeOffAnimatedEffect)
+//        .addClass(typeOffAnimatedChecked)
         .addClass('checked');
       else
         $(ev.currentTarget.firstChild)
         .removeAttr('checked', 'checked')
         .parent()
-        .removeClass(typeOffAnimatedChecked)
-        .addClass(typeOffAnimatedEffect)
+//        .removeClass(typeOffAnimatedChecked)
+//        .addClass(typeOffAnimatedEffect)
         .removeClass('checked');
-
     pulseOn(ev.currentTarget);
     setTimeout(pulseOff, animationTime, ev.currentTarget);
     setTimeout(summryInfo, animationTime * 1.01);
@@ -63,7 +62,7 @@
       .on('click', toggleInputCheckbox)
       .append($('<img>', {
         class: 'crossingLine',
-        src: 'img/'+crossingLine,
+        src: crossingLine
       }));
     pulseOn(ev.target);
     setTimeout(pulseOff, animationTime, ev.target);
@@ -179,7 +178,7 @@
           JSON.stringify($('#bjattaToDoListMainDiv').attr('style')));
         summryInfo();
       })
-    .attr('style', JSON.parse(localStorage.getItem('ToDoList.BelHard.LastPosition')||'"left: 1px; top: -1px;"'));
+    .attr('style', JSON.parse(localStorage.getItem('ToDoList.BelHard.LastPosition') || '"left: 1px; top: -1px;"'));
   $('#bjattaToDoListUl')
     .sortable()
     .on('change', 'li', summryInfo)
