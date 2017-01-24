@@ -8,7 +8,7 @@
     div = 'div.bjattaToDoList',
     liInputs = 'div.bjattaToDoList > ul.bjattaToDoList > li > input',
     li = 'div.bjattaToDoList > ul.bjattaToDoList > li',
-    crossingLine = 'img/yellow.png';
+    crossingLine = 'yellow.png';
 
   function storeUI() {
     localStorage.setItem('ToDoList.BelHard.allUl', JSON.stringify(document.querySelector(div + '>ul.bjattaToDoList').innerHTML));
@@ -63,7 +63,7 @@
       .on('click', toggleInputCheckbox)
       .append($('<img>', {
         class: 'crossingLine',
-        src: crossingLine,
+        src: 'img/'+crossingLine,
       }));
     pulseOn(ev.target);
     setTimeout(pulseOff, animationTime, ev.target);
@@ -179,7 +179,7 @@
           JSON.stringify($('#bjattaToDoListMainDiv').attr('style')));
         summryInfo();
       })
-    .attr('style', JSON.parse(localStorage.getItem('ToDoList.BelHard.LastPosition')));
+    .attr('style', JSON.parse(localStorage.getItem('ToDoList.BelHard.LastPosition')||'"left: 1px; top: -1px;"'));
   $('#bjattaToDoListUl')
     .sortable()
     .on('change', 'li', summryInfo)
