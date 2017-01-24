@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2");
+div.bjattaToDoListMain {
+  position: relative;
+  width: 22%;
+  border: solid 3px #369;
+  padding: 0.175em;
+  background: #369;
+  text-align: center;
+  color: #369;
+  box-shadow: 0 0 7px black;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  min-width: 300px;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  div.bjattaToDoListMain .infoField, div.bjattaToDoListMain .titleTop {
+    color: white; }
+  div.bjattaToDoListMain div.bjattaToDoList {
+    text-align: left;
+    background: white;
+    padding: 0.175em;
+    border-radius: 10px;
+    white-space: nowrap; }
+    div.bjattaToDoListMain div.bjattaToDoList ul {
+      padding: 0;
+      list-style-type: none; }
+      div.bjattaToDoListMain div.bjattaToDoList ul li {
+        padding: 0.175em; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li img {
+          position: absolute;
+          left: -1.7em;
+          top: -0.5em;
+          color: not-allowed;
+          opacity: 0;
+          width: 28em;
+          height: 4.3em; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li input[type=checkbox]:checked + label:after {
+          opacity: 1; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li label {
+          cursor: pointer;
+          position: absolute;
+          width: 1.1375em;
+          height: 1.1375em;
+          border-radius: 1.225em;
+          left: 0.175em;
+          top: 0.175em;
+          box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li label:after {
+          opacity: 0;
+          content: '';
+          position: absolute;
+          width: 9px;
+          height: 5px;
+          background: transparent;
+          top: 4px;
+          left: 3px;
+          border-top: none;
+          border-right: none;
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+        div.bjattaToDoListMain div.bjattaToDoList ul li input[type=checkbox] {
+          visibility: hidden; }
+      div.bjattaToDoListMain div.bjattaToDoList ul li:nth-child(even) {
+        background: #369;
+        border-radius: 10px;
+        color: white; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li:nth-child(even) label {
+          border-color: white; }
+      div.bjattaToDoListMain div.bjattaToDoList ul li:nth-child(odd) label {
+        border-color: #369; }
+      div.bjattaToDoListMain div.bjattaToDoList ul li.checked {
+        font-size: 80%;
+        padding-bottom: 0.35em; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li.checked img {
+          opacity: .5; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li.checked label {
+          font-size: 125%; }
+        div.bjattaToDoListMain div.bjattaToDoList ul li.checked label:after {
+          opacity: 1;
+          content: '';
+          position: absolute;
+          width: 9px;
+          height: 5px;
+          border: solid 0.175em;
+          top: 4px;
+          left: 3px;
+          border-top: none;
+          border-right: none;
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+    div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListPlusDiv"] {
+      -ms-flex-line-pack: right;
+          align-content: right;
+      text-align: right;
+      float: left;
+      width: 14%; }
+    div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListArchiveDiv"] {
+      -ms-flex-line-pack: left;
+          align-content: left;
+      text-align: left;
+      float: right;
+      width: 14%; }
+    div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListInputDiv"] {
+      padding: none;
+      padding-top: 0.175em;
+      -ms-flex-line-pack: center;
+          align-content: center;
+      text-align: center;
+      float: center;
+      width: 68%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+    div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListInputTextField"] {
+      display: inline-block;
+      border: solid 3px white;
+      border-radius: 10px;
+      box-shadow: 0 0 7px #369;
+      font-family: inherit;
+      max-width: 95%;
+      width: 95%;
+      padding-left: .5em;
+      outline: none; }
+    div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListArchiveButton"], div.bjattaToDoListMain div.bjattaToDoList [name="bjattaToDoListPlusButton"] {
+      padding: none;
+      background-color: #369;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 125%;
+      border-radius: 10px;
+      box-shadow: 0 0 7px #369;
+      position: relative;
+      width: 99%;
+      max-width: 99%; }
+    div.bjattaToDoListMain div.bjattaToDoList button:focus, div.bjattaToDoListMain div.bjattaToDoList input:focus {
+      outline: none;
+      box-shadow: 0 0 14px #369; }
+
+.roundedTwo {
+  position: relative;
+  border-width: 0.175em; }
