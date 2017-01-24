@@ -7,8 +7,8 @@
     animationTime = 900,
     div = 'div.bjattaToDoList',
     liInputs = 'div.bjattaToDoList > ul.bjattaToDoList > li > input',
-    li = 'div.bjattaToDoList > ul.bjattaToDoList > li';
-  crossingLine = 'img/yellow.png'
+    li = 'div.bjattaToDoList > ul.bjattaToDoList > li',
+    crossingLine = 'img/yellow.png';
 
   function storeUI() {
     localStorage.setItem('ToDoList.BelHard.allUl', JSON.stringify(document.querySelector(div + '>ul.bjattaToDoList').innerHTML));
@@ -64,8 +64,6 @@
       .append($('<img>', {
         class: 'crossingLine',
         src: crossingLine,
-        width: '250px',
-        height: '40px',
       }));
     pulseOn(ev.target);
     setTimeout(pulseOff, animationTime, ev.target);
