@@ -75,7 +75,7 @@ div.bjattaToDoListMain {
         font-size: 80%;
         padding-bottom: 0.35em; }
         div.bjattaToDoListMain div.bjattaToDoList ul li.checked img {
-          opacity: .5; }
+          opacity: .7; }
         div.bjattaToDoListMain div.bjattaToDoList ul li.checked label {
           font-size: 125%; }
         div.bjattaToDoListMain div.bjattaToDoList ul li.checked label:after {
