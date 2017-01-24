@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+$mainThemeColor: #369;
+$paddingButton: 0.175em;
+$widthForButton: 14%;
+
+div.bjattaToDoListMain {
+  position: relative;
+  width: 22%;
+  border: solid 3px $mainThemeColor;
+  padding: $paddingButton;
+  background: $mainThemeColor;
+  text-align: center;
+  color: $mainThemeColor;
+  box-shadow: 0 0 7px black;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
+  min-width: 300px;
+  outline: none;
+  user-select: none;
+
+  .infoField, .titleTop {
+    color: white;
+  }
+  div.bjattaToDoList {
+    text-align: left;
+    background: white;
+    padding: $paddingButton;
+    border-radius: 10px;
+    white-space: nowrap;
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        padding: $paddingButton;
+
+        img {
+          position: absolute;
+          left: -1.7em;
+          top: -0.5em;
+          color: not-allowed;
+          opacity: 0;
+          width: 28em;
+          height: 4.3em;
+        }
+        input[type=checkbox]:checked + label:after {
+          opacity: 1;
+        }
+        label {
+          cursor: pointer;
+          position: absolute;
+          width: $paddingButton*6.5;
+          height: $paddingButton*6.5;
+          border-radius: $paddingButton*7;
+          left: $paddingButton;
+          top: $paddingButton;
+          box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 1);
+        }
+        label:after {
+          opacity: 0;
+          content: '';
+          position: absolute;
+          width: 9px;
+          height: 5px;
+          background: transparent;
+          top: 4px;
+          left: 3px;
+          border-top: none;
+          border-right: none;
+          transform: rotate(-45deg);
+        }
+        input[type=checkbox] {
+          visibility: hidden;
+        }
+      }
+      li:nth-child(even) {
+        background: $mainThemeColor;
+        border-radius: 10px;
+        color: white;
+
+        label {
+          border-color: white;
+        }
+      }
+      li:nth-child(odd) {
+        label {
+          border-color: $mainThemeColor;
+        }
+      }
+      li.checked {
+        font-size: 80%;
+        padding-bottom: $paddingButton*2;
+
+        img {
+          opacity: .5;
+        }
+        label {
+          font-size: 125%;
+        }
+        label:after {
+          opacity: 1;
+          content: '';
+          position: absolute;
+          width: 9px;
+          height: 5px;
+          border: solid $paddingButton;
+          top: 4px;
+          left: 3px;
+          border-top: none;
+          border-right: none;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    [name="bjattaToDoListPlusDiv"] {
+      align-content: right;
+      text-align: right;
+      float: left;
+      width: $widthForButton;
+    }
+    [name="bjattaToDoListArchiveDiv"] {
+      align-content: left;
+      text-align: left;
+      float: right;
+      width: $widthForButton;
+    }
+    [name="bjattaToDoListInputDiv"] {
+      padding: none;
+      padding-top: $paddingButton;
+      align-content: center;
+      text-align: center;
+      float: center;
+      width: ((100-(2*$widthForButton))-4);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    [name ="bjattaToDoListInputTextField"] {
+      display: inline-block;
+      border: solid 3px white;
+      border-radius: 10px;
+      box-shadow: 0 0 7px $mainThemeColor;
+      font-family: inherit;
+      max-width: 95%;
+      width: 95%;
+      padding-left: .5em;
+      outline: none;
+    }
+    [name ="bjattaToDoListArchiveButton"], [name ="bjattaToDoListPlusButton"] {
+      padding: none;
+      background-color: $mainThemeColor;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 125%;
+      border-radius: 10px;
+      box-shadow: 0 0 7px $mainThemeColor;
+      position: relative;
+      width: 99%;
+      max-width: 99%;
+    }
+    button:focus, input:focus {
+      outline: none;
+      box-shadow: 0 0 14px $mainThemeColor;
+    }
+  }
+}
+.roundedTwo {
+  position: relative;
+  border-width: $paddingButton;
+}
